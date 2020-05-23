@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageItemsController">
+   <children>
+      <Button layoutX="960.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" text="Manage shops">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" style="-fx-background-color: C4C4C4;" text="Manage items">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Button>
+      <Label layoutX="220.0" layoutY="406.0" text="Current status of laundry item" textFill="#db6d00">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="446.0" prefHeight="45.0" prefWidth="362.0" text="Current status order" textFill="#db6d00">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="456.0" text="Order status:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="416.0" text="Item status:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="366.0" text="Item ID:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="336.0" text="Clothing type:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="306.0" text="Description: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="276.0" text="Item details:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="1061.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set item status">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="1051.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
+      <TextField layoutX="104.0" layoutY="223.0" prefHeight="40.0" prefWidth="370.0" promptText="Enter item ID">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button layoutX="526.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="GO">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TableView layoutX="104.0" layoutY="495.0" prefHeight="563.0" prefWidth="760.0">
+         <columns>
+            <TableColumn prefWidth="190.0" text="Description" />
+            <TableColumn prefWidth="190.0" text="Item status" />
+            <TableColumn prefWidth="190.0" text="Clothing type" />
+            <TableColumn prefWidth="190.0" text="Item ID" />
+         </columns>
+      </TableView>
+      <Text layoutX="1498.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set order status">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="1488.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
+   </children>
+</AnchorPane>
