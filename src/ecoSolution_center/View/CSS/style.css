@@ -1,3 +1,74 @@
+
+
+
 .button{
-    background: blue;
+     -fx-background-color: #6622CC;
+ }
+.button:hover{
+    -fx-background-color: aqua;
 }
+.button:focused{
+    /*-fx-background-color: blue;*/
+}
+
+.button{
+    -fx-background-color: #38967a;
+    -fx-background-color: #2e3047;
+    -fx-background-color: #43455c;
+    -fx-background-color: #3c3f58;
+    -fx-background-color: #707793;
+}
+
+
+
+.button{
+    -fx-background-color: #43455c;
+    -fx-text-fill: #848BA8;
+    -fx-background-radius: 0
+
+}
+
+.button:hover{
+    -fx-background-color: #3c3f58;
+
+}
+
+.button:pressed{
+    -fx-background-color: #848ba8;
+    -fx-text-fill: #3c3f58;
+}
+/*
+.button:focused{
+    -fx-background-color: #2e3047;
+}
+*/
+
+#pane{
+    -fx-background-color: #d9d6ff;
+
+}
+
+.choice-box{
+    -fx-background-radius: 0
+}
+.text-field{
+    -fx-background-radius: 0
+}
+.text-field:focused{
+    -fx-border-color: #2e3047;
+}
+.choice-box:focused{
+    -fx-border-color: #2e3047;
+}
+.choice-box{
+    -fx-font-size: 15pt;
+}
+.choice-box .menu-item:hover {
+    -fx-background-color: #38967a;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: #38967a;
+}
+
+
+

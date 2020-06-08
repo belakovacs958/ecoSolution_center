@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecoSolution_center.Controller.ManageItemsController">
+<AnchorPane fx:id="pane" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecoSolution_center.Controller.ManageItemsController">
    <children>
-      <Button layoutX="960.0" mnemonicParsing="false" onAction="#goToManageShop" prefHeight="110.0" prefWidth="960.0" text="Manage shops">
+      <Button layoutX="960.0" mnemonicParsing="false" onAction="#goToManageShop" prefHeight="110.0" prefWidth="960.0" text="Check shops">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" style="-fx-background-color: C4C4C4;" text="Manage items">
+      <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" text="Manage items">
          <font>
             <Font size="40.0" />
          </font>
@@ -67,12 +67,12 @@
             <Font size="20.0" />
          </font>
       </TextField>
-      <Button layoutX="526.0" layoutY="223.0" mnemonicParsing="false" onAction="#go" prefHeight="40.0" prefWidth="100.0" text="GO">
+      <Button layoutX="526.0" layoutY="223.0" mnemonicParsing="false" onAction="#go" prefHeight="40.0" prefWidth="100.0" stylesheets="@../CSS/button.css" text="GO">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TableView fx:id="tableview" layoutX="104.0" layoutY="495.0" prefHeight="563.0" prefWidth="760.0">
+      <TableView fx:id="tableview" layoutX="104.0" layoutY="495.0" prefHeight="563.0" prefWidth="760.0" stylesheets="@../CSS/tableView.css">
          <columns>
             <TableColumn fx:id="description_column" prefWidth="190.0" text="Description" />
             <TableColumn fx:id="itemStatus_column" prefWidth="190.0" text="Item status" />
@@ -81,7 +81,10 @@
          </columns>
       </TableView>
       <ChoiceBox fx:id="itemStatus_choiceBox" layoutX="1488.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
-      <Button layoutX="1752.0" layoutY="998.0" mnemonicParsing="false" onAction="#setStatuses" prefHeight="25.0" prefWidth="86.0" text="Set" />
+      <Button layoutX="1752.0" layoutY="998.0" mnemonicParsing="false" onAction="#setStatuses" prefHeight="40.0" prefWidth="100.0" stylesheets="@../CSS/button.css" text="Set">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
       <Label layoutX="1051.0" layoutY="448.0" text="Set order status">
          <font>
             <Font size="20.0" />

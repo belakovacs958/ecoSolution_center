@@ -1,0 +1,24 @@
+
+.button{
+    -fx-background-color: #38967a;
+    -fx-text-fill: #3c3f58;
+}
+.button:hover{
+    -fx-background-color: #35876a;
+}
+
+.button:pressed{
+    -fx-background-color: #397d60;
+
+}
+/*
+#go_btn,#addItem_btn,#finishOrder_btn:focused{
+    -fx-background-color: #366c50;
+}
+
+ */
+
+
+
+
+
