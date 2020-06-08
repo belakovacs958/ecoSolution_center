@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecoSolution_center.Controller.ManageItemsController">
    <children>
       <Button layoutX="960.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" text="Manage shops">
@@ -65,7 +64,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <ChoiceBox layoutX="1051.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
+      <ChoiceBox fx:id="orderStatus_choiceBox" layoutX="1051.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
       <TextField layoutX="104.0" layoutY="223.0" prefHeight="40.0" prefWidth="370.0" promptText="Enter item ID">
          <font>
             <Font size="20.0" />
@@ -76,12 +75,12 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <TableView layoutX="104.0" layoutY="495.0" prefHeight="563.0" prefWidth="760.0">
+      <TableView fx:id="tableview" layoutX="104.0" layoutY="495.0" prefHeight="563.0" prefWidth="760.0">
          <columns>
-            <TableColumn prefWidth="190.0" text="Description" />
-            <TableColumn prefWidth="190.0" text="Item status" />
-            <TableColumn prefWidth="190.0" text="Clothing type" />
-            <TableColumn prefWidth="190.0" text="Item ID" />
+            <TableColumn fx:id="description_column" prefWidth="190.0" text="Description" />
+            <TableColumn fx:id="itemStatus_column" prefWidth="190.0" text="Item status" />
+            <TableColumn fx:id="clothingType_column" prefWidth="190.0" text="Clothing type" />
+            <TableColumn fx:id="itemID_column" prefWidth="190.0" text="Item ID" />
          </columns>
       </TableView>
       <Text layoutX="1498.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set order status">
@@ -89,6 +88,6 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <ChoiceBox layoutX="1488.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
+      <ChoiceBox fx:id="itemStatus_choiceBox" layoutX="1488.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
    </children>
 </AnchorPane>

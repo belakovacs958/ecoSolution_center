@@ -36,7 +36,7 @@ public class ManageItemsController implements Initializable, windows {
     @FXML
     private Label description_label,clothingType_label,itemID_label,itemStatus_label,orderStatus_label;
     @FXML
-    private TableView<LaundryItem> order_tableview;
+    private TableView<LaundryItem> tableview;
     @FXML
     private TableColumn<LaundryItem, String> description_column;
     @FXML
@@ -72,10 +72,10 @@ public class ManageItemsController implements Initializable, windows {
 
 
     public void go() {
-        order_tableview.getItems().clear();
+        tableview.getItems().clear();
         itemID = itemID_textfield.getText();
         dbMethods.selectLaundryItems(Integer.parseInt(itemID));
-        order_tableview.setItems(laundryItems);
+        tableview.setItems(laundryItems);
         dbMethods.selectLaundryItemDetails(Integer.parseInt(itemID));
         dbMethods.selectOrderStatus(Integer.parseInt(itemID));
         description_label.setText("Description: " + dbMethods.getDescription());
