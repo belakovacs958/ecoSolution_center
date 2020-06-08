@@ -1,6 +1,7 @@
 package ecoSolution_center.Data;
 
 import ecoSolution_center.Controller.ManageItemsController;
+import ecoSolution_center.Controller.ManageShopsController;
 import ecoSolution_center.Model.LaundryItem;
 
 import java.sql.PreparedStatement;
@@ -97,6 +98,29 @@ public class DBMethods {
                 ManageItemsController.laundryItems.add(new LaundryItem(resultSet.getString(2),resultSet.getInt(1),
                         resultSet.getString(5),resultSet.getString(4)));
                 //System.out.println(CheckOrderController.laundryItems.get() + "  list");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+    public void listItemsInShop(int shopID){
+        try {
+            System.out.println("dbmethods");
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select * from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fldShopID = ?);");
+            query.setInt(1, shopID);
+            ResultSet resultSet = query.executeQuery();
+            while(resultSet.next()){
+                ManageShopsController.laundryItems.add(new LaundryItem(resultSet.getString(2),resultSet.getInt(1),
+                        resultSet.getString(5),resultSet.getString(4)));
+
+                System.out.println(resultSet.getString(2)+resultSet.getInt(1)+
+                          resultSet.getString(5)+resultSet.getString(4));
+                System.out.println(shopID);
 
             }
         } catch (SQLException e) {

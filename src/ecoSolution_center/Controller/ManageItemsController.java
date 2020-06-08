@@ -57,10 +57,10 @@ public class ManageItemsController implements Initializable, windows {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //this fills the choice boxes
-        itemStatus_choiceBox.getItems().addAll(Status.dirtyInShop,Status.cleanInShop,Status.completed);
-        itemStatus_choiceBox.setValue(Status.dirtyInShop);
-        orderStatus_choiceBox.getItems().addAll(Status.dirtyInShop,Status.cleanInShop,Status.completed);
-        orderStatus_choiceBox.setValue(Status.dirtyInShop);
+        itemStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport);
+        itemStatus_choiceBox.setValue(Status.arrivedInCenter);
+        orderStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport);
+        orderStatus_choiceBox.setValue(Status.arrivedInCenter);
 
         //these are the columns in the table view
         description_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("description"));
