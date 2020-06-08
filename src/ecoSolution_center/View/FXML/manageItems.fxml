@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecoSolution_center.Controller.ManageItemsController">
    <children>
-      <Button layoutX="960.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="960.0" text="Manage shops">
+      <Button layoutX="960.0" mnemonicParsing="false" onAction="#goToManageShop" prefHeight="110.0" prefWidth="960.0" text="Manage shops">
          <font>
             <Font size="40.0" />
          </font>
@@ -19,12 +19,12 @@
             <Font size="40.0" />
          </font>
       </Button>
-      <Label layoutX="220.0" layoutY="406.0" text="Current status of laundry item" textFill="#db6d00">
+      <Label fx:id="itemStatus_label" layoutX="220.0" layoutY="406.0" text="Current status of laundry item" textFill="#db6d00">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="220.0" layoutY="446.0" prefHeight="45.0" prefWidth="362.0" text="Current status order" textFill="#db6d00">
+      <Label fx:id="orderStatus_label" layoutX="220.0" layoutY="446.0" prefHeight="45.0" prefWidth="362.0" text="Current status order" textFill="#db6d00">
          <font>
             <Font size="30.0" />
          </font>
@@ -39,17 +39,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="366.0" text="Item ID:">
+      <Label fx:id="itemID_label" layoutX="104.0" layoutY="366.0" text="Item ID:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="336.0" text="Clothing type:">
+      <Label fx:id="clothingType_label" layoutX="104.0" layoutY="336.0" text="Clothing type:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="306.0" text="Description: ">
+      <Label fx:id="description_label" layoutX="104.0" layoutY="306.0" text="Description: ">
          <font>
             <Font size="20.0" />
          </font>
@@ -65,12 +65,12 @@
          </font>
       </Text>
       <ChoiceBox fx:id="orderStatus_choiceBox" layoutX="1051.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
-      <TextField layoutX="104.0" layoutY="223.0" prefHeight="40.0" prefWidth="370.0" promptText="Enter item ID">
+      <TextField fx:id="itemID_textfield" layoutX="104.0" layoutY="223.0" prefHeight="40.0" prefWidth="370.0" promptText="Enter item ID">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <Button layoutX="526.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="GO">
+      <Button layoutX="526.0" layoutY="223.0" mnemonicParsing="false" onAction="#go" prefHeight="40.0" prefWidth="100.0" text="GO">
          <font>
             <Font size="20.0" />
          </font>

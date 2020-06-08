@@ -1,6 +1,7 @@
 package ecoSolution_center.Controller;
 
 import ecoSolution_center.Data.DBMethods;
+import ecoSolution_center.Main;
 import ecoSolution_center.Model.LaundryItem;
 import ecoSolution_center.Model.Status;
 import ecoSolution_center.View.UIControl.Controller;
@@ -68,6 +69,10 @@ public class ManageItemsController implements Initializable, windows {
         itemID_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, Integer>("laundryItemID"));
 
 
+    }
+
+    public void goToManageShop(){
+        myController.setWindow(Main.windowId2);
     }
 
 

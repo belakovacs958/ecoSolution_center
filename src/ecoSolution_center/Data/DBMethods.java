@@ -92,8 +92,8 @@ public class DBMethods {
             query.setInt(1, itemID);
             ResultSet resultSet = query.executeQuery();
             while(resultSet.next()){
-                System.out.println(resultSet.getString(2)+resultSet.getInt(1)+
-                        resultSet.getString(5)+resultSet.getString(4));
+               // System.out.println(resultSet.getString(2)+resultSet.getInt(1)+
+                      //  resultSet.getString(5)+resultSet.getString(4));
                 ManageItemsController.laundryItems.add(new LaundryItem(resultSet.getString(2),resultSet.getInt(1),
                         resultSet.getString(5),resultSet.getString(4)));
                 //System.out.println(CheckOrderController.laundryItems.get() + "  list");
