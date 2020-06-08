@@ -111,22 +111,36 @@ public class DBMethods {
     public void listItemsInShop(int shopID){
         try {
             System.out.println("dbmethods");
-            PreparedStatement query = DBConnection.getConnect().prepareStatement("select * from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fldShopID = ?);");
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select * from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID " +
+                    " in (select fldOrderID from tblOrder where fdlShopID = ?);");
             query.setInt(1, shopID);
             ResultSet resultSet = query.executeQuery();
             while(resultSet.next()){
                 ManageShopsController.laundryItems.add(new LaundryItem(resultSet.getString(2),resultSet.getInt(1),
                         resultSet.getString(5),resultSet.getString(4)));
 
-                System.out.println(resultSet.getString(2)+resultSet.getInt(1)+
-                          resultSet.getString(5)+resultSet.getString(4));
-                System.out.println(shopID);
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+    public int countItems(int shopID){
+        int itemAmount = 0;
+        try {
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select count(fldLaundryItemID) from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fdlShopID = ?);");
+            query.setInt(1, shopID);
+            ResultSet resultSet = query.executeQuery();
+            if (resultSet.next()) {
+                itemAmount = resultSet.getInt(1);
+                return itemAmount;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return itemAmount;
     }
 
 

@@ -35,7 +35,7 @@ public class ManageShopsController implements Initializable, windows {
     @FXML
     private TextField shopID_textfield;
     @FXML
-    private Label description_label,clothingType_label,itemID_label,itemStatus_label,orderStatus_label;
+    private Label amount_label;
     @FXML
     private TableView<LaundryItem> tableview;
     @FXML
@@ -46,6 +46,7 @@ public class ManageShopsController implements Initializable, windows {
     private TableColumn<LaundryItem, String> clothingType_column;
     @FXML
     private TableColumn<LaundryItem, Integer> itemID_column;
+
 
 
     @Override
@@ -74,6 +75,7 @@ public class ManageShopsController implements Initializable, windows {
         tableview.getItems().clear();
         shopID = shopID_textfield.getText();
         dbMethods.listItemsInShop(Integer.parseInt(shopID));
+        amount_label.setText("Amount of laundry items in shop: " + String.valueOf(dbMethods.countItems(Integer.parseInt(shopID))));
         System.out.println("controller" + shopID);
         tableview.setItems(laundryItems);
 
