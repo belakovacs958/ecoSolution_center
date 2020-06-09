@@ -23,6 +23,7 @@ public class ManageItemsController implements Initializable, windows {
     private DBMethods dbMethods = new DBMethods();
 
 
+
     public static ObservableList<LaundryItem> laundryItems = FXCollections.observableArrayList();
     private String itemID = "";
 
@@ -35,7 +36,7 @@ public class ManageItemsController implements Initializable, windows {
     @FXML
     private TextField itemID_textfield;
     @FXML
-    private Label description_label,clothingType_label,itemID_label,itemStatus_label,orderStatus_label;
+    private Label description_label,clothingType_label,itemID_label,itemStatus_label,orderStatus_label, shopName_label, shopID_label;
     @FXML
     private TableView<LaundryItem> tableview;
     @FXML
@@ -88,9 +89,8 @@ public class ManageItemsController implements Initializable, windows {
         clothingType_label.setText("Clothing type: " + dbMethods.getClothingTypeName());
         itemStatus_label.setText(dbMethods.getItemStatus());
         orderStatus_label.setText(dbMethods.getOrderStatus());
-
-
-
+        shopName_label.setText("Shop name: " + dbMethods.selectShopName(Integer.parseInt(itemID)));
+        shopID_label.setText("Shop ID : " + dbMethods.selectShopID(Integer.parseInt(itemID))) ;
 
     }
 

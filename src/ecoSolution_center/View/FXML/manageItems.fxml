@@ -41,22 +41,22 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="itemID_label" layoutX="104.0" layoutY="366.0" text="Item ID:">
+      <Label fx:id="itemID_label" layoutX="104.0" layoutY="370.0" text="Item ID:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="clothingType_label" layoutX="104.0" layoutY="336.0" text="Clothing type:">
+      <Label fx:id="clothingType_label" layoutX="474.0" layoutY="321.0" text="Clothing type:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="description_label" layoutX="104.0" layoutY="306.0" text="Description: ">
+      <Label fx:id="description_label" layoutX="474.0" layoutY="276.0" text="Description: ">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="276.0" text="Item details:">
+      <Label fx:id="shopName_label" layoutX="104.0" layoutY="276.0" text="Shop name:">
          <font>
             <Font size="20.0" />
          </font>
@@ -80,8 +80,8 @@
             <TableColumn fx:id="itemID_column" prefWidth="190.0" text="Item ID" />
          </columns>
       </TableView>
-      <ChoiceBox fx:id="itemStatus_choiceBox" layoutX="1488.0" layoutY="495.0" prefHeight="40.0" prefWidth="370.0" />
-      <Button layoutX="1752.0" layoutY="998.0" mnemonicParsing="false" onAction="#setStatuses" prefHeight="40.0" prefWidth="100.0" stylesheets="@../CSS/button.css" text="Set">
+      <ChoiceBox fx:id="itemStatus_choiceBox" layoutX="1051.0" layoutY="646.0" prefHeight="40.0" prefWidth="370.0" />
+      <Button layoutX="1051.0" layoutY="755.0" mnemonicParsing="false" onAction="#setStatuses" prefHeight="40.0" prefWidth="100.0" stylesheets="@../CSS/button.css" text="Set">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -90,7 +90,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="1488.0" layoutY="448.0" prefHeight="17.0" prefWidth="147.0" text="Set item status">
+      <Label layoutX="1051.0" layoutY="599.0" prefHeight="17.0" prefWidth="147.0" text="Set item status">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="shopID_label" layoutX="103.0" layoutY="321.0" text="Shop ID:">
          <font>
             <Font size="20.0" />
          </font>

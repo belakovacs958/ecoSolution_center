@@ -143,6 +143,43 @@ public class DBMethods {
         return itemAmount;
     }
 
+    public String selectShopName(int laundryItemID){
+        String name = "";
+        try {
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select fldName from tblShop where  fldShopID =" +
+                    " (select fdlShopID from tblOrder where fldOrderID = " +
+                    "(select fldOrderID from tblLaundryItem where fldLaundryItemID = ?))");
+            query.setInt(1, laundryItemID);
+            ResultSet resultSet = query.executeQuery();
+            if (resultSet.next()) {
+                name = resultSet.getString(1);
+                return name;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return name;
+    }
+    public int selectShopID(int laundryItemID){
+        int shopID = 0;
+        try {
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select fdlShopID from tblOrder where fldOrderID = " +
+                    "(select fldOrderID from tblLaundryItem where fldLaundryItemID = ?)");
+            query.setInt(1, laundryItemID);
+            ResultSet resultSet = query.executeQuery();
+            if (resultSet.next()) {
+                shopID = resultSet.getInt(1);
+                return shopID;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return shopID;
+    }
+
+
+
+
 
 //////////////////////////////////////getters and setters/////////////////////////
 
