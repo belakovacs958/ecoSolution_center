@@ -83,14 +83,25 @@ public class ManageItemsController implements Initializable, windows {
         dbMethods.selectLaundryItems(Integer.parseInt(itemID));
         tableview.setItems(laundryItems);
         dbMethods.selectLaundryItemDetails(Integer.parseInt(itemID));
+        shopName_label.setText("Shop name: " + dbMethods.selectShopName(Integer.parseInt(itemID)));
+        shopID_label.setText("Shop ID : " + dbMethods.selectShopID(Integer.parseInt(itemID))) ;
+        displayOrderStatus();
+        displayItemDetails();
+
+    }
+
+    public void displayOrderStatus(){
         dbMethods.selectOrderStatus(Integer.parseInt(itemID));
+        orderStatus_label.setText(dbMethods.getOrderStatus());
+
+
+    }
+
+    public void displayItemDetails(){
         description_label.setText("Description: " + dbMethods.getDescription());
         itemID_label.setText("Item ID: " + itemID_textfield.getText());
         clothingType_label.setText("Clothing type: " + dbMethods.getClothingTypeName());
         itemStatus_label.setText(dbMethods.getItemStatus());
-        orderStatus_label.setText(dbMethods.getOrderStatus());
-        shopName_label.setText("Shop name: " + dbMethods.selectShopName(Integer.parseInt(itemID)));
-        shopID_label.setText("Shop ID : " + dbMethods.selectShopID(Integer.parseInt(itemID))) ;
 
     }
 

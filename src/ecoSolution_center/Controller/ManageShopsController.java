@@ -3,7 +3,6 @@ package ecoSolution_center.Controller;
 import ecoSolution_center.Data.DBMethods;
 import ecoSolution_center.Main;
 import ecoSolution_center.Model.LaundryItem;
-import ecoSolution_center.Model.Status;
 import ecoSolution_center.View.UIControl.Controller;
 import ecoSolution_center.View.UIControl.windows;
 import javafx.collections.FXCollections;
@@ -80,4 +79,7 @@ public class ManageShopsController implements Initializable, windows {
         tableview.setItems(laundryItems);
 
     }
+
+
+
 }
