@@ -57,19 +57,8 @@ public class ManageItemsController implements Initializable, windows {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //this fills the choice boxes
-        itemStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport);
-        itemStatus_choiceBox.setValue(Status.arrivedInCenter);
-        orderStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport);
-        orderStatus_choiceBox.setValue(Status.arrivedInCenter);
-
-        //these are the columns in the table view
-        description_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("description"));
-        itemStatus_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("itemStatus"));
-        clothingType_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("clothingTypeName"));
-        itemID_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, Integer>("laundryItemID"));
-
-
+        fillChoiceBoxes();
+        createTableView();
     }
 
     public void goToManageShop(){
@@ -109,6 +98,19 @@ public class ManageItemsController implements Initializable, windows {
         itemID = itemID_textfield.getText();
         dbMethods.updateOrderStatus(Integer.parseInt(itemID), orderStatus_choiceBox.getValue());
         dbMethods.updateItemStatus(Integer.parseInt(itemID), itemStatus_choiceBox.getValue());
-
+    }
+    public void createTableView(){
+        //these are the columns in the table view
+        description_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("description"));
+        itemStatus_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("itemStatus"));
+        clothingType_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, String>("clothingTypeName"));
+        itemID_column.setCellValueFactory(new PropertyValueFactory<LaundryItem, Integer>("laundryItemID"));
+    }
+    public void fillChoiceBoxes(){
+        //this fills the choice boxes
+        itemStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport,Status.inTransportToShop);
+        itemStatus_choiceBox.setValue(Status.arrivedInCenter);
+        orderStatus_choiceBox.getItems().addAll(Status.arrivedInCenter,Status.inWashing,Status.inIroning,Status.inDrying,Status.readyForTransport,Status.inTransportToShop);
+        orderStatus_choiceBox.setValue(Status.arrivedInCenter);
     }
 }
