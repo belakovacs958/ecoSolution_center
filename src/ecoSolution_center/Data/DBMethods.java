@@ -93,11 +93,9 @@ public class DBMethods {
             query.setInt(1, itemID);
             ResultSet resultSet = query.executeQuery();
             while(resultSet.next()){
-               // System.out.println(resultSet.getString(2)+resultSet.getInt(1)+
-                      //  resultSet.getString(5)+resultSet.getString(4));
+
                 ManageItemsController.laundryItems.add(new LaundryItem(resultSet.getString(2),resultSet.getInt(1),
                         resultSet.getString(5),resultSet.getString(4)));
-                //System.out.println(CheckOrderController.laundryItems.get() + "  list");
 
             }
         } catch (SQLException e) {
@@ -126,7 +124,8 @@ public class DBMethods {
         }
 
     }
-    public int countItems(int shopID){
+
+    public int countItems(int shopID) {
         int itemAmount = 0;
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("select count(fldLaundryItemID) from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fdlShopID = ?);");
