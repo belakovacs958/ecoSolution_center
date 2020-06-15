@@ -16,7 +16,7 @@ public class DBConnection {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-            this.connect = DriverManager.getConnection("jdbc:sqlserver://localhost:1433; databaseName=Ecosolutions1", "sa", "123456");
+            this.connect = DriverManager.getConnection("jdbc:sqlserver://localhost:1433; databaseName=Ecosolutions", "sa", "123456");
 
         }
         catch (Exception e) {

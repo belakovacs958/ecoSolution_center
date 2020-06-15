@@ -110,7 +110,7 @@ public class DBMethods {
         try {
             System.out.println("dbmethods");
             PreparedStatement query = DBConnection.getConnect().prepareStatement("select * from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID " +
-                    " in (select fldOrderID from tblOrder where fdlShopID = ?);");
+                    " in (select fldOrderID from tblOrder where fldShopID = ?);");
             query.setInt(1, shopID);
             ResultSet resultSet = query.executeQuery();
             while(resultSet.next()){
@@ -128,7 +128,7 @@ public class DBMethods {
     public int countItems(int shopID) {
         int itemAmount = 0;
         try {
-            PreparedStatement query = DBConnection.getConnect().prepareStatement("select count(fldLaundryItemID) from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fdlShopID = ?);");
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select count(fldLaundryItemID) from tblLaundryItem where fldItemStatus = 'Dirty in shop' and fldOrderID  in (select fldOrderID from tblOrder where fldShopID = ?);");
             query.setInt(1, shopID);
             ResultSet resultSet = query.executeQuery();
             if (resultSet.next()) {
@@ -146,7 +146,7 @@ public class DBMethods {
         String name = "";
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("select fldName from tblShop where  fldShopID =" +
-                    " (select fdlShopID from tblOrder where fldOrderID = " +
+                    " (select fldShopID from tblOrder where fldOrderID = " +
                     "(select fldOrderID from tblLaundryItem where fldLaundryItemID = ?))");
             query.setInt(1, laundryItemID);
             ResultSet resultSet = query.executeQuery();
@@ -162,7 +162,7 @@ public class DBMethods {
     public int selectShopID(int laundryItemID){
         int shopID = 0;
         try {
-            PreparedStatement query = DBConnection.getConnect().prepareStatement("select fdlShopID from tblOrder where fldOrderID = " +
+            PreparedStatement query = DBConnection.getConnect().prepareStatement("select fldShopID from tblOrder where fldOrderID = " +
                     "(select fldOrderID from tblLaundryItem where fldLaundryItemID = ?)");
             query.setInt(1, laundryItemID);
             ResultSet resultSet = query.executeQuery();
