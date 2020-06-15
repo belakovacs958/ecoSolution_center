@@ -65,7 +65,9 @@ public class ManageItemsController implements Initializable, windows {
         myController.setWindow(Main.windowId2);
     }
 
-
+    /**
+     * part of UC2,UC20 and UC10
+     */
     public void go() {
         tableview.getItems().clear();
         itemID = itemID_textfield.getText();
@@ -79,6 +81,9 @@ public class ManageItemsController implements Initializable, windows {
 
     }
 
+    /**
+     * part of UC2 and UC17
+     */
     public void displayOrderStatus(){
         dbMethods.selectOrderStatus(Integer.parseInt(itemID));
         orderStatus_label.setText(dbMethods.getOrderStatus());
@@ -86,6 +91,9 @@ public class ManageItemsController implements Initializable, windows {
 
     }
 
+    /**
+     * part of UC15,UC20
+     */
     public void displayItemDetails(){
         description_label.setText("Description: " + dbMethods.getDescription());
         itemID_label.setText("Item ID: " + itemID_textfield.getText());
@@ -94,6 +102,9 @@ public class ManageItemsController implements Initializable, windows {
 
     }
 
+    /**
+     * part of UC9,UC21
+     */
     public void setStatuses(){
         itemID = itemID_textfield.getText();
         dbMethods.updateOrderStatus(Integer.parseInt(itemID), orderStatus_choiceBox.getValue());

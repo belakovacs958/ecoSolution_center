@@ -63,12 +63,15 @@ public class ManageShopsController implements Initializable, windows {
 
     }
 
-
+    //sets manage items window
     public void goToManageItems(){
         myController.setWindow(Main.windowId1);
 
     }
 
+    /**
+     * UC21
+     */
     public void go(){
 
         tableview.getItems().clear();

@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 public class DBMethods {
     ////////////////////////////////////////fields////////////////////////////////////
-    private String name;
-    private String phoneNo;
+
     private String description = "";
     private String itemStatus = "";
     private String clothingTypeName = "";
@@ -21,7 +20,11 @@ public class DBMethods {
 
     //////////////////////////////Methods////////////////////////////////////////
 
-
+    /**
+     * updates order status in database
+     * @param laundryItemID
+     * @param orderStatus
+     */
     public void updateOrderStatus(int laundryItemID, String orderStatus){
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("update tblOrder \n" +
@@ -35,6 +38,12 @@ public class DBMethods {
             e.printStackTrace();
         }
     }
+
+    /**
+     * updates item status in database
+     * @param laundryItemID
+     * @param itemStatus
+     */
     public void updateItemStatus(int laundryItemID, String itemStatus){
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("update tblLaundryItem\n" +
@@ -49,6 +58,10 @@ public class DBMethods {
         }
     }
 
+    /**
+     * selects order status from database to display in UI
+     * @param laundryItemID
+     */
     public void selectOrderStatus(int laundryItemID){
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("SELECT fldOrderStatus \n" +
@@ -66,7 +79,10 @@ public class DBMethods {
 
     }
 
-
+    /**
+     * selects laundry item details to display in UI
+     * @param laundryItemID
+     */
     public void selectLaundryItemDetails( int laundryItemID){
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("select * from tblLaundryItem where fldLaundryItemID = ? ");
@@ -83,6 +99,10 @@ public class DBMethods {
         }
     }
 
+    /**
+     * selects all laundry items from the same order as the scanned item
+     * @param itemID
+     */
     public void selectLaundryItems(int itemID){
         try {
             PreparedStatement query = DBConnection.getConnect().prepareStatement("SELECT * \n" +
@@ -106,6 +126,10 @@ public class DBMethods {
 
     }
 
+    /**
+     * selects all dirty laundry from the selected shop
+     * @param shopID
+     */
     public void listItemsInShop(int shopID){
         try {
             System.out.println("dbmethods");
@@ -125,6 +149,11 @@ public class DBMethods {
 
     }
 
+    /**
+     * counts dirty laundry items in the selected shop
+     * @param shopID
+     * @return
+     */
     public int countItems(int shopID) {
         int itemAmount = 0;
         try {
@@ -142,6 +171,11 @@ public class DBMethods {
         return itemAmount;
     }
 
+    /**
+     * selects the shop name for a given laundry item id, where that item was registered
+     * @param laundryItemID
+     * @return
+     */
     public String selectShopName(int laundryItemID){
         String name = "";
         try {
@@ -159,6 +193,12 @@ public class DBMethods {
         }
         return name;
     }
+
+    /**
+     * selects the shop ID for a given laundry item id, where that item was registered
+     * @param laundryItemID
+     * @return
+     */
     public int selectShopID(int laundryItemID){
         int shopID = 0;
         try {
@@ -182,13 +222,6 @@ public class DBMethods {
 
 //////////////////////////////////////getters and setters/////////////////////////
 
-    public String getPhoneNo() {
-        return phoneNo;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public String getDescription() {
         return description;
